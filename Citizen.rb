@@ -1,11 +1,10 @@
-class Citizen
+class Citizen < Person
 
 	# mother and father must be citizens too	
-	# possible ideologies: :mormon, :anarchist, :democrat, :meritocrat, :ultracapitalist, :socialist, :nazi, :communist, :antisemit, :pacifist
-	def initialize(mother, father, ideology)
+	def initialize(mother, father)
 		@Mother = mother
 		@Father = father
-		@Ideology = ideology
+		@Ideology = (father.Ideology + mother.Ideology) / 2
 	end
 
 	def Mother
